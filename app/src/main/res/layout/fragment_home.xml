@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/homeSuprem">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+
+
+        <ImageView
+            android:id="@+id/profilePicture"
+            android:contentDescription="Profile Picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/profile_picture_panda" />
+
+
+
+        <TextView
+            android:id="@+id/presentation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="THIS IS ME"
+            android:textSize="50sp"
+            android:layout_toRightOf="@+id/profilePicture"
+            android:layout_toEndOf="@+id/profilePicture"/>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BLOU BLOU BLOU"
+            android:textSize="50sp"
+            android:layout_below="@+id/profilePicture"/>
+
+        <Button
+            android:id="@+id/seeMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SEE MORE"
+            android:textSize="50sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_below="@+id/description"/>
+
+
+
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>
