@@ -1,13 +1,12 @@
 package com.example.angie.id_app.fragments;
 
 import android.app.Fragment;
-import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
 import com.example.angie.id_app.R;
 
 /**
@@ -16,7 +15,6 @@ import com.example.angie.id_app.R;
 
 public class HomeFragment extends Fragment {
 
-    Button seeMore;
 
     public HomeFragment(){}
 
@@ -24,8 +22,9 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        seeMore = new Button(getActivity().getBaseContext());
-        seeMore.findViewById(R.id.seeMore);
+         View view =  inflater.inflate(R.layout.fragment_home, container, false);
+
+        Button seeMore = (Button) view.findViewById(R.id.seeMore);
         seeMore.isEnabled();
 
         seeMore.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +37,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return view;
     }
 
 
