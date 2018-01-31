@@ -22,6 +22,7 @@ import java.util.List;
 
 public class SkillsListAdapter extends ArrayAdapter<SkillsItem> {
 
+
     public SkillsListAdapter(@NonNull Context context, List<SkillsItem> skillsItems) {
         super(context,0, skillsItems);
     }
@@ -30,7 +31,7 @@ public class SkillsListAdapter extends ArrayAdapter<SkillsItem> {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         if(convertView == null){
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_list,parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_skillslist,parent, false);
         }
 
         SkillsViewHolder viewHolder = (SkillsViewHolder) convertView.getTag();
@@ -41,12 +42,12 @@ public class SkillsListAdapter extends ArrayAdapter<SkillsItem> {
             convertView.setTag(viewHolder);
         }
 
-        //getItem(position) va récupérer l'item [position] de la List<CustomItem> expItems
+        //getItem(position) va récupérer l'item [position] de la List
         SkillsItem item = getItem(position);
 
         //il ne reste plus qu'à remplir notre vue
         viewHolder.title.setText(item.getTitle());
-        viewHolder.level.setImageDrawable(new ColorDrawable((item.getLevel())));
+        viewHolder.level.setImageDrawable(item.getLevel());
 
         return convertView;
     }

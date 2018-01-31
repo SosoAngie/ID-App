@@ -1,6 +1,6 @@
 package com.example.angie.id_app.model;
 
-import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 
 /**
  * Created by angie on 31/01/18.
@@ -9,9 +9,9 @@ import android.graphics.drawable.ColorDrawable;
 public class SkillsItem {
 
     private String title;
-    private int level;
+    private Drawable level;
 
-    public SkillsItem(String title, int level) {
+    public SkillsItem(String title, Drawable level) {
         this.title = title;
         this.level = level;
     }
@@ -20,7 +20,7 @@ public class SkillsItem {
         return title;
     }
 
-    public int getLevel() {
+    public Drawable getLevel() {
         return level;
     }
 
@@ -28,7 +28,7 @@ public class SkillsItem {
         this.title = title;
     }
 
-    public void setLevel(int level) {
+    public void setLevel(Drawable level) {
         this.level = level;
     }
 }

@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent">
 
     <TextView
         android:id="@+id/skillsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="90sp"
+        android:textSize="50sp"
         android:text="TITLE"/>
 
     <ImageView
         android:id="@+id/skillsImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="50sp"
-        android:layout_marginTop="30dp"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/skillsTitle"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@drawable/orange_cat_128"
+        android:textSize="50sp" />
 
-</RelativeLayout>
+</LinearLayout>

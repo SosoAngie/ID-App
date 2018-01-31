@@ -2,17 +2,14 @@ package com.example.angie.id_app.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-
 import com.example.angie.id_app.R;
-import com.example.angie.id_app.model.CustomItem;
-import com.example.angie.id_app.model.CustomListAdapter;
 import com.example.angie.id_app.model.SkillsItem;
 import com.example.angie.id_app.model.SkillsListAdapter;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +21,18 @@ public class SkillsFragment extends Fragment{
 
     ListView skills;
 
+    String[] titles = {
+            "Google Plus",
+            "Twitter",
+            "Windows",
+            "Bing"  } ;
+
+    Integer[] imageId = {
+            R.drawable.androidcoffee_300,
+            R.drawable.bonbon_300,
+            R.drawable.cat_300,
+            R.drawable.orange_cat_128 };
+
     public SkillsFragment(){}
 
     @Override
@@ -32,20 +41,22 @@ public class SkillsFragment extends Fragment{
         View view = inflater.inflate(R.layout.fragment_skills, container, false);
         skills = (ListView) view.findViewById(R.id.listSkills);
 
-        List<SkillsItem> skillsItems = genererItem();
+        List<SkillsItem> skillsItems = generateItem();
 
         SkillsListAdapter skillsListAdapter = new SkillsListAdapter(getActivity().getBaseContext(),skillsItems);
+        Log.d("itemCount before",Integer.toString(skillsListAdapter.getCount()));
         skills.setAdapter(skillsListAdapter);
+        Log.d("itemCount after",Integer.toString(skillsListAdapter.getCount()));
 
         return view;
     }
 
-    private List<SkillsItem> genererItem(){
+    private List<SkillsItem> generateItem(){
         List<SkillsItem> item = new ArrayList<SkillsItem>();
-       // item.add(new SkillsItem("TROULOU",R.drawable.androidcoffee_300));
-        //item.add(new SkillsItem("TROULOU",R.drawable.bonbon_300));
-        //item.add(new SkillsItem("TROULOU",R.drawable.orange_cat_128));
-        //item.add(new SkillsItem("TROULOU",R.drawable.bluehome_300));
+
+        for(int i = 1; i <= 3; i++) {
+            item.add(new SkillsItem(titles[i], getResources().getDrawable(imageId[i])));
+        }
         return item;
     }
 }
